@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_event_attachments_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_attachments"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFEAC602"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_attachments"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="attachments:"
+                            android:src="@drawable/ic_attachments"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_attachments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="attachments"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_attachments_save"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="save attachments"
+                            android:src="@drawable/ic_action_save"/>
+
+                    <ImageView
+                            android:id="@+id/img_attachments_cancel"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="cancel attachments"
+                            android:src="@drawable/ic_cancelled"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_content_attachments"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Select your file:"
+                        android:textColor="#FF000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                    <TextView
+                            android:id="@+id/txt_select_your_file"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="40"
+                            android:ems="10"
+                            android:hint="Select your file"
+                            android:paddingRight="10dp"/>
+
+                    <Button
+                            android:id="@+id/start_file_picker_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:text="Browse"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/lyt_border_attachments_bottom"
+                        >
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFFFF"
+                            android:paddingBottom="4dp"
+                            android:text="Can upload jpg, gif, png, csv, txt and doc files"/>
+                </LinearLayout>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Files:"
+                        android:textColor="#FF000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                <LinearLayout
+                        android:id="@+id/lyt_selected_files"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+
+</RelativeLayout>

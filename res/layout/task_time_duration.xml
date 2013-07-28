@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#991d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_task_time_duration_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+
+
+            <LinearLayout
+                    android:id="@+id/content_time_duration"
+                    android:layout_width="fill_parent"
+                    android:layout_height="212dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="150dp"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:weightSum="90">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/lyt_border"
+                        android:baselineAligned="false"
+                        android:gravity="center">
+
+
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".8"
+                            android:gravity="center">
+
+                        <TextView android:id="@+id/tv_total_duration"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:paddingTop="10dp"
+                                  android:paddingLeft="40dp"
+                                  android:textColor="#FF000000"
+                                  android:text="1 week 12hrs 15min"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".4"
+                            android:gravity="center">
+
+                        <ImageView
+                                android:id="@+id/img_task_time_duration_save"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:baselineAlignBottom="false"
+                                android:contentDescription="save time duration"
+                                android:background="#FF3dd2dd"
+                                android:src="@drawable/ic_action_save"/>
+
+                        <ImageView
+                                android:id="@+id/img_task_time_duration_cancel"
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="#FF3dd2dd"
+                                android:baselineAlignBottom="false"
+                                android:contentDescription="cancel time duration"
+                                android:src="@drawable/ic_cancelled"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="90"
+                        android:paddingBottom="16dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFFFF"
+                            android:paddingTop="10dp"
+                            android:paddingLeft="10dp"
+                            android:text="Start:"
+                            android:layout_weight="60"
+                            android:textColor="#FF000000"
+                            android:textStyle="bold"
+                            android:textSize="16dp"/>
+
+
+                    <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:text="Mon 12/09/2013"
+                            android:id="@+id/dp_start_date"/>
+
+                    <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:text="9:00 AM"
+                            android:id="@+id/tp_start_time"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="90"
+                        android:paddingBottom="16dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFFFF"
+                            android:paddingTop="10dp"
+                            android:paddingLeft="10dp"
+                            android:text="Start:"
+                            android:layout_weight="60"
+                            android:textColor="#FF000000"
+                            android:textStyle="bold"
+                            android:textSize="16dp"/>
+
+
+                    <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:text="tues 12/17/2013"
+                            android:id="@+id/dp_end_date"/>
+
+                    <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:text="9:15 PM"
+                            android:id="@+id/tp_end_time"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+
+</RelativeLayout>

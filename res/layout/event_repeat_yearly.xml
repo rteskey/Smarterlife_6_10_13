@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_event_repeat_yearly_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_repeat_yearly"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFEE801F"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_repeat_yearly"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="event repeat yearly"
+                            android:src="@drawable/ic_repeat"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9631E"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/tv_repeat_yearly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="repeat:"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="#FFD9631E"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_repeat_yearly_save"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="save repeat yearly"
+                            android:src="@drawable/ic_action_save"/>
+
+                    <ImageView
+                            android:id="@+id/img_repeat_yearly_cancel"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="repeat"
+                            android:src="@drawable/ic_cancelled"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_repeat_yearly_upper_half"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/lyt_border_repeat"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_repeat_yearly_event_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFFFF"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:text="Zumba Excerise Class"
+                        android:textColor="#FF000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                <TextView
+                        android:id="@+id/tv_repeat_yearly_event_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFFFF"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="40dp"
+                        android:text="Dance/excerise to Latin American Music."
+                        android:textColor="#FF000000"
+                        android:textSize="16dp"/>
+
+                <LinearLayout
+                        android:id="@+id/lyt_repeat_yearly_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/lyt_border_attachments_bottom"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                    <TextView
+                            android:id="@+id/tv_repeat_yearly_date_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="65"
+                            android:background="#FFFFFFFF"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:text="Date/Time:"
+                            android:textColor="#FF000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+
+                    <LinearLayout
+                            android:id="@+id/lyt_repeat_yearly_date_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="35"
+                            android:background="#FFFFFFFF"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/tv_repeat_yearly_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFFFF"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:text="June 26th, 2013"
+                                android:textColor="#FF000000"
+                                android:textSize="20dp"
+                                android:textStyle="bold"/>
+
+                        <TextView
+                                android:id="@+id/tv_repeat_yearly_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFFFF"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="10dp"
+                                android:text="6pm-7pm"
+                                android:textColor="#FF000000"
+                                android:textSize="16dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_repeat_yearly_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                <LinearLayout
+                        android:id="@+id/lyt_repeat_yearly_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:background="#FFFFFFFF"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp">
+
+                    <TextView
+                            android:id="@+id/tv_repeat_yearly_type_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFFFF"
+                            android:text="Repeat Schedule:"
+                            android:textColor="#FF000000"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+
+                    <Spinner
+                            android:id="@+id/sp_repeat_yearly_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="3dp"
+                            android:paddingBottom="5dp"
+                            android:entries="@array/share_repeat_yearly_type"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:background="#FFFFFFFF"
+                        android:orientation="vertical">
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+
+                        <LinearLayout
+                                android:id="@+id/lyt_often_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="25"
+                                android:orientation="vertical">
+
+                            <LinearLayout
+                                    android:id="@+id/lyt_yearly_often_entereddays_container"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="16dp"
+                                    android:weightSum="90">
+
+                                <TextView
+                                        android:id="@+id/tv_yearly_howoften_entered_days"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:paddingLeft="10dp"
+                                        android:paddingTop="10dp"
+                                        android:text="Every"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+
+                                <EditText
+                                        android:id="@+id/et_yearly_every_entered_days"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:hint="2"
+                                        android:paddingTop="10dp"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+
+                                <TextView
+                                        android:id="@+id/tv_yearly_howoften_entered_days"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:paddingLeft="10dp"
+                                        android:paddingTop="10dp"
+                                        android:text="day(2)"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/lyt_border_attachments_bottom">
+
+                <LinearLayout
+                        android:id="@+id/lyt_often_details_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFFFF"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                    <RadioGroup
+                            android:id="@+id/rg_howoften_yearly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:orientation="vertical">
+
+                        <RadioButton
+                                android:id="@+id/rb_yearly_on_month"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_monthly_the_number_day"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                            android:id="@+id/lyt_often_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:orientation="vertical">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="90"
+                                android:paddingBottom="16dp">
+
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#FFFFFFFF"
+                                    android:paddingTop="10dp"
+                                    android:paddingLeft="10dp"
+                                    android:text="On"
+                                    android:layout_weight="40"
+                                    android:textColor="#FF000000"
+                                    android:textSize="16dp"/>
+
+                            <Spinner
+                                    android:id="@+id/sp_yearly_on_month_day"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="3dp"
+                                    android:entries="@array/yearly_on_month_months"
+                                    android:textColor="#FF000000"
+                                    android:layout_weight="30"
+                                    android:textSize="10dp"/>
+
+                            <EditText
+                                    android:id="@+id/et_monthly_day_entered_of_every"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#FFFFFFFF"
+                                    android:paddingLeft="10dp"
+                                    android:hint="2"
+                                    android:layout_weight="20"
+                                    android:paddingTop="10dp"
+                                    android:textColor="#FF000000"
+                                    android:textSize="16dp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="30"
+                                android:paddingBottom="16dp">
+
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#FFFFFFFF"
+                                    android:layout_weight="12"
+                                    android:paddingLeft="10dp"
+                                    android:text="On the"
+                                    android:textColor="#FF000000"
+                                    android:textSize="16dp"/>
+
+                            <Spinner
+                                    android:id="@+id/sp_yearly_on_month_month"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="5dp"
+                                    android:entries="@array/yearly_on_month_months"
+                                    android:textColor="#FF000000"
+                                    android:layout_weight="10"
+                                    android:textSize="10dp"/>
+
+                            <Spinner
+                                    android:id="@+id/sp_yearly_on_month_day"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_weight="10"
+                                    android:entries="@array/monthly_the_first"
+                                    android:textColor="#FF000000"
+                                    android:textSize="10dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="100"
+                                android:orientation="horizontal">
+
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="70"
+                                    android:background="#FFFFFFFF"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp"
+                                    android:text="of every"
+                                    android:textColor="#FF000000"
+                                    android:textSize="16dp"/>
+
+                            <Spinner
+                                    android:id="@+id/sp_yearly_on_every_month"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="3dp"
+                                    android:entries="@array/yearly_on_month_months"
+                                    android:textColor="#FF000000"
+                                    android:layout_weight="50"
+                                    android:textSize="10dp"/>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_repeat_yearly_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                <TextView
+                        android:id="@+id/tv_repeat_yearly_range"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="75"
+                        android:background="#FFFFFFFF"
+                        android:paddingLeft="20dp"
+                        android:text="Begin:"
+                        android:textColor="#FF000000"
+                        android:textSize="16dp"/>
+
+                <LinearLayout
+                        android:id="@+id/lyt_range_yearly_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="25"
+                        android:background="#FFFFFFFF"
+                        android:orientation="vertical">
+
+                    <Spinner
+                            android:id="@+id/sp_range_yearly_begin"
+                            android:layout_width="160dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="3dp"
+                            android:entries="@array/range_yearly_begin_date"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+
+                    <LinearLayout
+                            android:id="@+id/lyt_yearly_often_details_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                        <RadioGroup
+                                android:id="@+id/rg_range_yearly_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="85"
+                                android:orientation="vertical">
+
+                            <RadioButton
+                                    android:id="@+id/rb_range_yearly_nostop"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+
+                            <RadioButton
+                                    android:id="@+id/rb_range_yearly_endafter"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            <RadioButton
+                                    android:id="@+id/rb_range_yearly_endby"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+                        </RadioGroup>
+
+                        <LinearLayout
+                                android:id="@+id/lyt_range_yearly_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="15"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/tv_range_yearly_dontstop"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#FFFFFFFF"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="11dp"
+                                    android:text="Don&apos;t stop"
+                                    android:textColor="#FF000000"
+                                    android:textSize="16dp"/>
+
+                            <LinearLayout
+                                    android:id="@+id/lyt_range_yearly_entered_times_container"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="22dp"
+                                    android:weightSum="90">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:paddingLeft="10dp"
+                                        android:text="Enter after :"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+
+                                <EditText
+                                        android:id="@+id/et_range_yearly_end_entered"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:hint="12"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="30"
+                                        android:background="#FFFFFFFF"
+                                        android:paddingLeft="10dp"
+                                        android:text="times."
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                    android:id="@+id/lyt_range_yearly_end_container"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="26dp"
+                                    android:weightSum="100">
+
+                                <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="50"
+                                        android:background="#FFFFFFFF"
+                                        android:paddingLeft="10dp"
+                                        android:text="End by:"
+                                        android:textColor="#FF000000"
+                                        android:textSize="16dp"/>
+
+                                <Spinner
+                                        android:id="@+id/sp_range_yearly_end"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_weight="50"
+                                        android:layout_marginRight="5dp"
+                                        android:layout_marginTop="3dp"
+                                        android:entries="@array/range_yearly_end_date"
+                                        android:textColor="#FF000000"
+                                        android:textSize="10dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="#46484A"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal"
+              tools:context=".Absolute">
+
+    <LinearLayout
+            android:id="@+id/datescrolllayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dip"
+
+                android:paddingLeft="30dp">
+
+            <TableRow android:padding="10dip">
+
+                <TextView
+                        android:id="@+id/txttimewheeltitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10pt"
+                        android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+            <androidwheel.WheelView
+                    android:id="@+id/t1"
+                    android:layout_width="125dp"
+                    android:layout_height="150dip"
+                    android:tag="hours"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/t2"
+                    android:layout_width="50dip"
+                    android:layout_height="150dip"
+                    android:tag="minutes"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/t3"
+                    android:layout_width="75dip"
+                    android:layout_height="150dip"
+                    android:tag="ampm"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/timebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+            <Button
+                    android:id="@+id/time_ok_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="Ok"/>
+
+            <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Button"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

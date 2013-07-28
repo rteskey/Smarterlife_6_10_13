@@ -1,0 +1,695 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/lyt_add_task"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578"
+                tools:context=".AddEventMore">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_task_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578"
+            >
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FF17A649"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_title"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="title"
+                            android:src="@drawable/ic_title"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FF149541"
+                        android:gravity="center">
+
+                    <EditText
+                            android:id="@+id/et_task_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="#00000000"
+                            android:hint="title"
+                            android:textColor="#FFFFFFFF"
+                            android:textColorHint="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/lyt_task_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFEE801F"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_date"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task date"
+                            android:src="@drawable/ic_date"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9631E"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/txt_task_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".7"
+                            android:ems="10"
+                            android:gravity="center|left"
+                            android:hint="date"
+                            android:text="date:"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+
+                    <LinearLayout
+                            android:id="@+id/lyt_task_date_from_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".3"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/dateStartDisplay"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="start date"
+                                android:tag="dateStartDisplay"
+                                android:text="From"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="10dp"/>
+
+                        <TextView
+                                android:id="@+id/dateEndDisplay"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="End Date"
+                                android:tag="dateEndDisplay"
+                                android:text="To"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="10dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFEE801F"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_time"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task time"
+                            android:src="@drawable/ic_time"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9631E"
+                        android:gravity="center"
+                        android:weightSum="100">
+
+                    <TextView
+                            android:id="@+id/lbl_task_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="70"
+                            android:ems="10"
+                            android:gravity="center|left"
+                            android:hint="time"
+                            android:text="time"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+
+                    <LinearLayout
+                            android:id="@+id/time_task_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="30"
+                            android:orientation="vertical"
+                            android:weightSum="100">
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:orientation="horizontal"
+                                android:weightSum="100">
+
+                            <TextView
+                                    android:id="@+id/timeStartDisplay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="70"
+                                    android:hint="start time"
+                                    android:tag="timeStartDisplay"
+                                    android:text="From"
+                                    android:textColor="#FFFFFFFF"
+                                    android:textSize="10dp"/>
+
+                            <CheckBox
+                                    android:id="@+id/timeStartallday"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="30"
+                                    android:tag="alldayStart"
+                                    android:text="all day"
+                                    android:textColor="#FFFFFFFF"
+                                    android:textSize="10dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:orientation="horizontal"
+                                android:weightSum="100">
+
+                            <TextView
+                                    android:id="@+id/timeEndDisplay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="70"
+                                    android:hint="end time"
+                                    android:tag="timeEndDisplay"
+                                    android:text="To"
+                                    android:textColor="#FFFFFFFF"
+                                    android:textSize="10dp"/>
+
+                            <CheckBox
+                                    android:id="@+id/timeEndallday"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="30"
+                                    android:tag="alldayEnd"
+                                    android:text="all day"
+                                    android:textColor="#FFFFFFFF"
+                                    android:textSize="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_time_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".248"
+                        android:background="#FFD9302D"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_time_duration"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="privacy"
+                            android:src="@drawable/ic_time_duration"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9151B"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_task_time_duration_play"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="time duration"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFD9151B"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_time_duration_more"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="privacy"
+                            android:src="@drawable/ic_action_more_detail"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/lyt_task_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".248"
+                        android:background="#FFEAC602"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_location"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task location"
+                            android:src="@drawable/ic_location"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_task_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="location"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_location_more"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task location"
+                            android:src="@drawable/ic_action_more_detail"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_reminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".248"
+                        android:background="#FF5B9ED9"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_reminder"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task reminders"
+                            android:src="@drawable/ic_reminders"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FF518EC3"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_task_reminders_play"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="reminders"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FF518EC3"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_reminder_more"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task reminders"
+                            android:src="@drawable/ic_action_more_detail"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_assignees"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:background="#FF17A649"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_assignees"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="assignees"
+                            android:src="@drawable/ic_assignees"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FF149541"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_task_assignees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="assignees"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FF149541"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_assignees_play"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="assignees"
+                            android:src="@drawable/ic_action_more_detail"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:background="#FFEE801F"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_notes"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="notes"
+                            android:src="@drawable/ic_notes"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9631E"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_task_notes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="notes"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFD9631E"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_task_notes_play"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="task notes"
+                            android:src="@drawable/ic_action_more_detail"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/lyt_task_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight=".5"
+                        android:baselineAligned="false"
+                        android:gravity="center">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:background="#FF518EC3"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/btn_task_save"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight=".8"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:text="Save"
+                                android:textColor="#FFFFFFFF"
+                                android:background="@android:color/transparent"
+                                android:textSize="24dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight=".5"
+                        android:baselineAligned="false"
+                        android:gravity="center">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:background="#FF518EC3"
+                            android:gravity="center">
+
+                        <Button
+                                android:id="@+id/btn_task_Cancel"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight=".8"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:text="Cancel"
+                                android:textColor="#FFFFFFFF"
+                                android:background="@android:color/transparent"
+                                android:textSize="24dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+</RelativeLayout>

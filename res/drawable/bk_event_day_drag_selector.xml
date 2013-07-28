@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  
+     <item android:drawable="@drawable/drag_dots_in_a_corner" android:state_focused="false" android:state_pressed="false"/>   
+   
+    <item android:drawable="@drawable/bk_event_day_grad_onpress" android:state_focused="false" android:state_pressed="true"/> 
+
+</selector>
+
+ 

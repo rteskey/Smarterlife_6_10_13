@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="#ff195897"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal"
+        >
+
+
+    <LinearLayout
+            android:id="@+id/datescrolllayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="left"
+            android:orientation="vertical">
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal"
+                android:layout_weight="0.6">
+
+            <EditText
+                    android:id="@+id/resultMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:digits="0123456789"
+                    android:ems="2"
+                    android:maxLength="2"
+                    android:inputType="number">
+
+                <requestFocus/>
+            </EditText>
+
+            <EditText
+                    android:id="@+id/resultDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:ems="2">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/resultYear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:ems="3">
+            </EditText>
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+            <androidwheel.WheelView
+                    android:id="@+id/p1"
+                    android:layout_width="125dp"
+                    android:layout_height="150dip"
+                    android:tag="month"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/p2"
+                    android:layout_width="50dip"
+                    android:layout_height="150dip"
+                    android:tag="days"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/p3"
+                    android:layout_width="75dip"
+                    android:layout_height="150dip"
+                    android:tag="year"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:orientation="horizontal"
+                android:padding="2dip">
+
+            <AutoCompleteTextView
+                    android:id="@+id/r1"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:textSize="18sp"/>
+
+            <AutoCompleteTextView
+                    android:id="@+id/r2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="18sp"/>
+
+            <AutoCompleteTextView
+                    android:id="@+id/r3"
+                    android:layout_width="75dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/timebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+            <Button
+                    android:id="@+id/date_ok_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ok"/>
+
+            <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

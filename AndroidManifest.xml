@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.smarterlife.calendar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.smarterlife.calendar.Cal_dashboard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.smarterlife.calendar.Cal_monthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_cal_month"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.smarterlife.calendar.Cal_dayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_cal_day"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.smarterlife.calendar.Cal_eventActivity"
+            android:label="@string/title_activity_cal_event"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity android:name="com.smarterlife.filepicker.FilePickerActivity"
+        	 android:label="@string/title_activity_filepicker"
+            android:windowSoftInputMode="stateHidden" />
+    </application>
+
+</manifest>

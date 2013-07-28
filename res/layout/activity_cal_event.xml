@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".Cal_eventActivity">
+
+    <include
+            android:id="@+id/activity_cal_event_firstscreen"
+            layout="@layout/activity_cal_event_firstscreen"
+            android:visibility="visible"/>
+
+    <include
+            android:id="@+id/activity_cal_event_secondscreen"
+            layout="@layout/activity_cal_event_secondscreen"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_location"
+            layout="@layout/event_location"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_reminders"
+            layout="@layout/event_reminder"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_attachments"
+            layout="@layout/event_attachments"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_priority"
+            layout="@layout/event_priority"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_privacy"
+            layout="@layout/event_privacy"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_attendees"
+            layout="@layout/event_attendees"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_repeat_daily"
+            layout="@layout/event_repeat_daily"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_repeat_weekly"
+            layout="@layout/event_repeat_weekly"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_repeat_monthly"
+            layout="@layout/event_repeat_monthly"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_repeat_yearly"
+            layout="@layout/event_repeat_yearly"
+            android:visibility="invisible"/>
+
+    <include
+            android:id="@+id/event_notes"
+            layout="@layout/event_notes"
+            android:visibility="invisible"/>
+    <include
+            android:id="@+id/task_main"
+            layout="@layout/task_main"
+            android:visibility="invisible"/>
+    <include
+            android:id="@+id/task_location"
+            layout="@layout/task_location"
+            android:visibility="invisible"/>
+    <include
+            android:id="@+id/task_reminders"
+            layout="@layout/task_reminders"
+            android:visibility="invisible"/>
+    <include
+            android:id="@+id/task_time_duration"
+            layout="@layout/task_time_duration"
+            android:visibility="invisible"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="buttonBarStyle">@style/ButtonBar</item>
+        <item name="buttonBarButtonStyle">@style/ButtonBarButton</item>
+      
+    </style>
+
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+
+    <style name="ButtonBarButton" />
+    
+    <style name="Dash_Event_Button">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        
+    </style>
+    
+
+    <style name="EventsDashButton_style" parent="android:Widget.Holo.Button">
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:padding">3dp</item> 
+        <item name="android:background">#17a649</item>
+    </style>
+     
+    
+    <style name="TasksDashButton_style" parent="android:Widget.Holo.Button">
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">#d9631e</item>
+    </style>
+    
+     <style name="calendarmonth_toprow" parent="android:Widget.Holo.Button">
+      <item name="android:background">@drawable/bk_calendar_btn_toprow</item>
+          <item name="android:tag">btn_calendar</item>
+          <item name="android:textColor">#fff</item>
+          <item name="android:textSize">20sp</item>
+    </style>
+    
+      <style name="calendarmonth_leftswipe" parent="android:Widget.Holo.Button">
+      <item name="android:background">@drawable/bk_calendar_btn_swipe</item>
+          <item name="android:tag">btn_calendar</item>
+          <item name="android:textColor">#fff</item>
+          <item name="android:textSize">20sp</item>
+    </style>
+     
+     
+     
+     <style name="calendarmonth_toprow_ic" parent="android:Widget.Holo.Button">
+      <item name="android:background">@drawable/bk_calendar_btn_toprow_ic</item>
+          <item name="android:tag">btn_calendar</item>
+          <item name="android:textColor">#fff</item>
+          <item name="android:textSize">20sp</item>
+    </style>
+     
+     
+     <style name="dash_button" parent="android:Widget.Holo.Button">
+          <item name="android:background">@drawable/bk_calendar_btn_dash</item>
+          <item name="android:tag">btn_calendar</item>
+          <item name="android:textColor">#fff</item>
+          <item name="android:textSize">30sp</item>
+     </style>
+  
+</resources>

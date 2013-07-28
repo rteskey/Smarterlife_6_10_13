@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="100dp"
+
+              android:orientation="vertical"
+              android:id="@+id/lyt_event_status_drag"
+        >
+
+    <RelativeLayout
+            android:id="@+id/lyt_monthcalendar_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="3dp"
+            android:background="#30D9302D"
+            android:gravity="center_horizontal|center"
+            android:visibility="invisible">
+
+        <TextView
+                android:id="@+id/txt_monthcalendar_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal|center"
+                android:text=""
+                android:textColor="#fff"
+                android:textSize="18sp"/>
+
+        <LinearLayout
+                android:id="@+id/lyt_monthcalendar_undo_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:visibility="gone">
+
+            <ImageView
+                    android:id="@+id/img_sep"
+                    android:layout_width="3dp"
+                    android:layout_height="45dp"
+                    android:background="#ffeeeeee"/>
+
+            <ImageButton
+                    android:id="@+id/btn_undo"
+                    style="@style/calendarmonth_toprow"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bk_calendar_btn_toprow_ic"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:scaleType="fitXY"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

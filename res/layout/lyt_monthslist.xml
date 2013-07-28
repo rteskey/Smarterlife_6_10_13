@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/lyt_event_leftswipe"
+              android:layout_width="match_parent"
+              android:layout_height="180dp"
+              android:background="#FF1d4578"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btn_jan"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="0"
+                android:text="Jan"/>
+
+        <Button
+                android:id="@+id/btn_feb"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="1"
+                android:text="Feb"
+                />
+
+        <Button
+                android:id="@+id/btn_mar"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="2"
+                android:text="Mar"/>
+
+        <Button
+                android:id="@+id/btn_apr"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0dp"
+                android:layout_weight=".25"
+                android:tag="3"
+                android:text="Apr"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btn_may"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="4"
+                android:text="May"/>
+
+        <Button
+                android:id="@+id/btn_jun"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="5"
+                android:text="Jun"/>
+
+        <Button
+                android:id="@+id/btn_jul"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="6"
+                android:text="Jul"/>
+
+        <Button
+                android:id="@+id/btn_aug"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0dp"
+                android:layout_weight=".25"
+                android:tag="7"
+                android:text="Aug"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btn_sep"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="8"
+                android:text="Sep"/>
+
+        <Button
+                android:id="@+id/btn_oct"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="9"
+                android:text="Oct"/>
+
+        <Button
+                android:id="@+id/btn_nov"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
+                android:layout_weight=".25"
+                android:tag="10"
+                android:text="Nov"/>
+
+        <Button
+                android:id="@+id/btn_dec"
+                style="@style/calendarmonth_toprow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0dp"
+                android:layout_weight=".25"
+                android:tag="11"
+                android:text="Dec"/>
+    </LinearLayout>
+</LinearLayout>
+

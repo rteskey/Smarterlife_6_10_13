@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_event_notes_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FF17A649"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_notes"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="notes"
+                            android:src="@drawable/ic_notes"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FF149541"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_notes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="notes"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="#FF149541"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_event_notes_save"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="notes"
+                            android:src="@drawable/ic_action_save"/>
+
+                    <ImageView
+                            android:id="@+id/img_event_notes_cancel"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="notes"
+                            android:src="@drawable/ic_cancelled"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    >
+
+                <LinearLayout
+                        android:id="@+id/lyt_notes_container"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="100"
+                        android:background="@drawable/lyt_border_attachments_bottom"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp">
+
+                    <TextView
+                            android:id="@+id/notes_title_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="10dp"
+                            android:paddingLeft="10dp"
+                            android:layout_weight="80"
+                            android:background="#FFFFFFFF"
+                            android:textColor="#FF000000"
+                            android:text="Title:"
+                            android:textSize="20dp"
+                            android:textStyle="bold"/>
+
+                    <EditText
+                            android:id="@+id/notes_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="20"
+                            />
+                </LinearLayout>
+
+                <EditText
+                        android:id="@+id/notes_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:gravity="top"
+                        />
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+</RelativeLayout>

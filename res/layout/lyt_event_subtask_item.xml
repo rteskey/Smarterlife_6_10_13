@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="25dp"
+              android:background="#EEEEEE"
+              android:orientation="horizontal"
+              android:id="@+id/lyt_linear_event_subtask_item"
+              android:paddingLeft="50dp">
+
+    <ImageView
+            android:id="@+id/img_sub_task_item_color"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="#ffccdd"/>
+
+    <CheckBox
+            android:id="@+id/chk_sub_task_item_done"
+            style="@style/dash_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""/>
+
+    <TextView
+            android:id="@+id/txt_sub_task_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:alpha="255"
+            android:gravity="center|left"
+            android:padding="10dp"
+            android:text="task"
+            android:textColor="#111111"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+</LinearLayout>

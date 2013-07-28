@@ -1,0 +1,483 @@
+package com.smarterlife.calendar;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
+
+
+
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidwheel.ArrayWheelAdapter;
+import androidwheel.OnWheelChangedListener;
+import androidwheel.OnWheelScrollListener;
+import androidwheel.WheelView;
+import apphelper.SmarterlifeHelper;
+
+public class CopyOfCal_eventActivity extends Activity {
+	private TextView dateStartDisplay, dateEndDisplay, timeStartDisplay, timeEndDisplay, reminderDisplay ,reminderMonthDisplay, reminderYearDisplay , txttimewheeltitle ;
+	private EditText lbltitle;
+	private Button date_ok, time_ok, savebtn, cancelbtn , customreminderbtn,  customreminderbtn_previous, customreminderbtn_next;  
+	private View dialoglayout;
+	private WheelView wheelHours;
+	private WheelView wheelMinutes;
+	private WheelView wheelAmPm;
+	private AlertDialog alertTime;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_cal_event);
+		initializeActivityControls();
+		populateActivityControls();
+	
+	}
+	private void initializeActivityControls()
+	{
+		timeStartDisplay = (TextView) this.findViewById(R.id.timeStartDisplay);
+		timeEndDisplay=  (TextView) this.findViewById(R.id.timeEndDisplay);
+        dateStartDisplay = (TextView) this.findViewById(R.id.dateStartDisplay);
+		dateEndDisplay = (TextView) this.findViewById(R.id.dateEndDisplay);
+	    
+		lbltitle = (EditText)this.findViewById(R.id.txtTitle);
+		
+	   
+		
+	}
+	
+	private void populateActivityControls()
+	{
+	
+		
+	    timeStartDisplay .setText(SmarterlifeHelper.getCurrentTimeString(0));
+	    timeEndDisplay .setText(SmarterlifeHelper.getCurrentTimeString(1));
+		dateStartDisplay.setText(SmarterlifeHelper.getCurrentDateString());
+		dateEndDisplay.setText(SmarterlifeHelper.getCurrentDateString());
+		
+	    
+	    // set control events 
+	    
+	    lbltitle.addTextChangedListener(textWatcher);
+		timeStartDisplay.setOnClickListener(TimeDisplayListener);
+		timeEndDisplay.setOnClickListener(TimeDisplayListener);
+	    
+		
+	}
+	
+	
+	
+	
+	private TextWatcher textWatcher = new TextWatcher() {
+
+	      
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            //after text changed
+        	 int spaceindex = 0;
+        	 spaceindex = s.toString().trim().lastIndexOf(" "); 
+        	 
+        	String text = s.toString().trim();
+        	ArrayList arlistText = new ArrayList();
+        	String[] StArText;// = text.split("\\s+");
+        	Calendar cal = null;
+        	Calendar calCurrrent = Calendar.getInstance();
+        	if(spaceindex >-1)  // if spaceindex >0 => multiple words in phrase
+        	{
+        		StArText = text.split("\\s+");
+        		for(int i = 0; i <StArText.length; i++)
+        		{  
+        			String word = StArText[i]; 
+                    int wordInt = 0;
+        			if(word.equalsIgnoreCase("at"))
+        			{
+        			   if(StArText.length >i+1)
+						
+							
+							try {
+								cal =	praseNext(StArText[i+1]);
+								
+									
+								if(cal != null )
+								{  
+									if(cal.getTimeInMillis() <calCurrrent.getTimeInMillis())  // 
+									{  // this mean time is in past so add 12 hrs to flip it to next 12 hrs peroid 
+										cal.add(Calendar.HOUR, 12);
+										
+									}
+									
+									
+									int hourint = cal.get(Calendar.HOUR);
+									
+									if( hourint==0)
+										hourint =12;
+									
+									
+										
+									String hours =hourint<10?"0"+String.valueOf(hourint): String.valueOf(hourint);
+									String minute = cal.get(Calendar.MINUTE)<10?"0"+String.valueOf(cal.get(Calendar.MINUTE)): String.valueOf(cal.get(Calendar.MINUTE));
+									String ampm = cal.get(Calendar.AM_PM) ==0? "AM":"PM";
+									timeStartDisplay.setText(hours + ":"+ minute + " "+ampm );
+									
+									cal.add(Calendar.HOUR, 1);  // set the end time, add 1 hour to current calendar
+									hourint = cal.get(Calendar.HOUR);
+									
+									if( hourint==0)
+										hourint =12;
+									hours = hourint<10?"0"+String.valueOf(hourint): String.valueOf(hourint);
+									ampm = cal.get(Calendar.AM_PM) ==0? "AM":"PM";
+									timeEndDisplay.setText(hours + ":"+ minute + " "+ampm );
+								//Toast.makeText(ctx, "cal.get(Calendar.HOUR)   "+ cal.get(Calendar.HOUR) +"cal.get(Calendar.minute) "+ cal.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
+								}
+							} catch (ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+								Toast.makeText(getApplicationContext(), "onTextChanged   "+ e.getMessage().toString(), Toast.LENGTH_LONG).show();
+						
+							}
+						
+							// TODO Auto-generated catch block
+							
+						
+        			   
+        			   
+        			}
+        		}
+        		
+        		
+        		arlistText.add(text.split("\\s+"));
+        		
+        		text = text.substring(text.lastIndexOf(" ") , text.length());	
+        	    	
+        		
+        	  Scanner titlescanner = new Scanner(s.toString());
+        	}
+        	else // one word sentence 
+        	{
+        		if(text.toLowerCase() == "at")
+        		{
+        			
+        			
+        		}
+        		
+        	}
+        	
+        	
+        	
+        //	Toast.makeText(ctx, "onTextChanged "+ s.toString()  + " start "+ start + " before "+ before + "count "+ count, Toast.LENGTH_LONG).show();
+        	
+        	  
+        }
+
+      
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                int after) {
+        }
+
+       
+        public void afterTextChanged(Editable s) {
+        	// Toast.makeText(ctx, "afterTextChanged "+ s.toString(), Toast.LENGTH_LONG).show();
+        }
+    };
+	
+    
+    protected Calendar praseNext(String nextWord) throws ParseException {
+  	  // first we have to prase for time 
+  		
+  		Calendar cal = Calendar.getInstance();
+  		int timeInt = -1;
+  		int length = nextWord.length() ;
+  		int hours = -1, minutes = -1;
+  	
+  		try{
+  		
+  		try {
+  			timeInt = Integer.parseInt(nextWord);
+
+  		} catch (NumberFormatException e) {
+
+  		}
+  		if (timeInt > -1 && timeInt < 25) {
+  			hours = timeInt;
+  			minutes = 0;
+
+  		}
+  		if (timeInt > -1 && length == 3) {
+  			hours = Integer.parseInt(nextWord.substring(0, 1));
+  			minutes = Integer.parseInt(nextWord.substring(1, 3));
+  			
+  		}
+
+  		if (timeInt > -1 && length == 4) {
+  			hours = Integer.parseInt(nextWord.substring(0, 2));
+  			minutes = Integer.parseInt(nextWord.substring(2, 4));
+
+  		}
+
+  		if (hours > 23 || hours < 0 || minutes > 60 || minutes < 0) {
+  			cal = null;
+  		}
+
+  		else
+  			cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
+  					cal.get(Calendar.DAY_OF_MONTH), hours, minutes, 0);
+  		
+  		
+//  		if(cal.get(Calendar.HOUR_OF_DAY)<7 && cal.get(Calendar.HOUR_OF_DAY) >=0 )
+//  			cal.set(Calendar.AM_PM, 1);
+//  		else cal.set(Calendar.AM_PM, 0);
+  		}
+  		catch(Exception ex)
+  		{}
+  		
+  		return cal;
+  	}
+    
+	private OnClickListener TimeDisplayListener = new OnClickListener() {
+		int hours = 0, minutes = 0;
+		String ampm = "";
+
+		public void onClick(View v) {
+
+			if (v.getTag().toString().trim().contains("timeStartDisplay")) {
+			//	time_ok.setText("Set Start Time");
+				hours = Integer.parseInt(timeStartDisplay.getText().toString()
+						.trim().substring(0, 2));
+				minutes = Integer.parseInt(timeStartDisplay.getText()
+						.toString().trim().substring(3, 5));
+				ampm = timeStartDisplay.getText().toString().trim()
+						.substring(6, 8);
+			} else {
+				//time_ok.setText("Set End Time");
+				hours = Integer.parseInt(timeEndDisplay.getText().toString()
+						.trim().substring(0, 2));
+				minutes = Integer.parseInt(timeEndDisplay.getText().toString()
+						.trim().substring(3, 5));
+				ampm = timeEndDisplay.getText().toString().trim()
+						.substring(6, 8);
+			}
+
+			wheelHours.setCurrentItem(hours - 1);
+			wheelMinutes.setCurrentItem(minutes);
+			wheelAmPm.setCurrentItem(ampm == "AM" ? 0 : 1);
+			alertTime.show();
+		}
+	};
+
+	private LayoutInflater inflater;
+	
+	
+    private void  setTimeDialog(){
+    	inflater = this.getLayoutInflater();
+
+		dialoglayout = inflater.inflate(R.layout.timewheellayout, null);
+				//(ViewGroup) eActivity.getCurrentFocus(), false);
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setView(dialoglayout);
+		alertTime = builder.create();
+
+		if (dialoglayout.getParent() != null)
+			dialoglayout = null;
+		
+		populateHoursArray();
+		populateMinutesArray();
+	    wheelHours = (WheelView) dialoglayout.findViewById(R.id.t1);
+		wheelMinutes = (WheelView) dialoglayout.findViewById(R.id.t2);
+	    wheelAmPm = (WheelView) dialoglayout.findViewById(R.id.t3);
+		initHoursWheel(wheelHours );
+		initMinutesWheel(wheelMinutes);
+		initAmPmWheel(wheelAmPm);
+		
+		txttimewheeltitle = (TextView) dialoglayout.findViewById(R.id.txttimewheeltitle);
+		time_ok = (Button) dialoglayout.findViewById(R.id.time_ok_btn);
+		
+		time_ok.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(time_ok.getText().toString().trim().contains("Set Start Time"))
+				{
+					timeStartDisplay.setText(wheelHoursArray[wheelHours.getCurrentItem()]
+						+ ":"
+						+ wheelMinutesArray[wheelMinutes.getCurrentItem()]
+						+ " "
+						+  wheelAmPmArray[wheelAmPm.getCurrentItem()]);
+				}
+				 
+				if(time_ok.getText().toString().equals("Set End Time")) {
+					timeEndDisplay.setText(wheelHoursArray[wheelHours.getCurrentItem()]
+							+ ":"
+							+ wheelMinutesArray[wheelMinutes.getCurrentItem()]
+							+ " "
+							+ wheelAmPmArray[ wheelAmPm.getCurrentItem()]);
+				}
+				
+				if(time_ok.getText().toString().trim().equals("Set reminder time"))
+				{
+					Calendar cal = Calendar.getInstance();
+					cal.setTimeInMillis((Long)txttimewheeltitle.getTag());
+					cal.set(Calendar.HOUR,Integer.parseInt(wheelHoursArray[wheelHours.getCurrentItem()]) );
+					cal.set(Calendar.MINUTE,Integer.parseInt(wheelMinutesArray[wheelMinutes.getCurrentItem()]) );
+					cal.set(Calendar.AM_PM, wheelAmPmArray[ wheelAmPm.getCurrentItem()]=="AM"?0:1 );
+					
+					BuildCustomReminderItem( cal.getTimeInMillis());
+				}
+				
+				alertTime.dismiss();
+			}
+
+		});
+		
+		
+	}
+
+
+
+	private String wheelHoursArray[] =  new String[12];
+	private String wheelMinutesArray[] =  new String[60];
+private void populateHoursArray() {
+		
+		for (int i = 0; i < wheelHoursArray.length; i++)
+			if(i <9)
+			wheelHoursArray[i] ="0" +String.valueOf(i+1);
+			else wheelHoursArray[i] =String.valueOf(i+1);
+
+	}
+	private void populateMinutesArray() {
+		
+		for (int i = 0; i < wheelMinutesArray.length; i++)
+			if(i <10)
+			wheelMinutesArray[i] ="0" + String.valueOf(i);
+			else wheelMinutesArray[i] = String.valueOf(i);
+	}
+	
+
+
+
+	  private void initHoursWheel(WheelView wheelHours) {
+			// TODO Auto-generated method stub
+	    	wheelHours.setViewAdapter(new ArrayWheelAdapter(this, wheelHoursArray));
+	    	wheelHours.setVisibleItems(2);
+	    	wheelHours.setCurrentItem(0);
+			
+		}
+	    private void initMinutesWheel( WheelView wheelMunites) {
+			// TODO Auto-generated method stub
+			
+			wheelMunites.setViewAdapter(new ArrayWheelAdapter(this, wheelMinutesArray));
+			wheelMunites.setVisibleItems(2);
+			wheelMunites.setCurrentItem(0);
+			wheelMunites.addChangingListener(changedListener);
+			wheelMunites.addScrollingListener(scrolledListener);
+			
+		}
+
+		private String wheelAmPmArray[] = {"AM","PM"};
+		private void initAmPmWheel(WheelView wheelAmPM ) {
+			// TODO Auto-generated method stub
+			wheelAmPM.setViewAdapter(new ArrayWheelAdapter(this, wheelAmPmArray));
+			wheelAmPM.setVisibleItems(2);
+			wheelAmPM.setCurrentItem(0);
+			wheelAmPM.addChangingListener(changedListener);
+			wheelAmPM.addScrollingListener(scrolledListener);
+			
+		}
+
+		private boolean wheelScrolled = false;
+		
+		OnWheelScrollListener scrolledListener = new OnWheelScrollListener() {
+			public void onScrollStarts(WheelView wheel) {
+				wheelScrolled = true;
+			}
+
+			public void onScrollEnds(WheelView wheel) {
+				wheelScrolled = false;
+				Toast.makeText(getApplicationContext(), wheel.getId() + "",
+						Toast.LENGTH_SHORT).show();
+				updateStatus();
+
+			}
+
+			public void onScrollingStarted(WheelView wheel) {
+				// TODO Auto-generated method stub
+
+			}
+
+			public void onScrollingFinished(WheelView wheel) {
+				// TODO Auto-generated method stub
+
+				if (wheel.getTag().toString().trim().contains("month")
+						|| wheel.getTag().toString().trim().contains("year")) {
+					updateStatusMonth();
+				}
+			}
+		};
+
+		// Wheel changed listener
+		private final OnWheelChangedListener changedListener = new OnWheelChangedListener() {
+			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				if (!wheelScrolled) {
+					updateStatus();
+				}
+			}
+		};
+
+
+		private void updateStatus() {
+			TextView text = (TextView) dialoglayout.findViewById(R.id.result);
+			text.setText(wheelMenu1[wheelMonth.getCurrentItem()] + " "
+					+ wheelMenu2[wheelDays.getCurrentItem()] + ", "
+					+ wheelMenu3[wheelYears.getCurrentItem()]);
+
+			int month = wheelMonth.getCurrentItem();
+			Calendar mycal = new GregorianCalendar(
+					Integer.parseInt(wheelMenu3[wheelYears.getCurrentItem()]),
+					month, 1);
+
+			// Get the number of days in that month
+			int daysInMonth = mycal.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+			// initWheel2(wheelMonth,daysInMonth ); // infinite Loop
+
+			text1.setText(wheelMenu1[wheelMonth.getCurrentItem()]);
+			text1.setSelection(wheelMenu1[wheelMonth.getCurrentItem()].length());
+			text1.dismissDropDown();
+
+			text2.setText(wheelMenu2[wheelDays.getCurrentItem()]);
+			text2.setSelection(wheelMenu2[wheelDays.getCurrentItem()].length());
+
+			text3.setText(wheelMenu3[wheelYears.getCurrentItem()]);
+			text3.setSelection(wheelMenu3[wheelYears.getCurrentItem()].length());
+
+		}
+		
+		
+		private void BuildCustomReminderItem( long dateinMills)
+		{
+			
+			Calendar Caldate= Calendar.getInstance();
+			Caldate.setTimeInMillis(dateinMills);
+			customReminderSelectedDate.add(Caldate.getTimeInMillis());
+			//Toast.makeText(ctx, "Added toi Array "+ Caldate.getTimeInMillis()+ " Count Ar "+customReminderSelectedDate.size() , Toast.LENGTH_SHORT).show();
+		//	ArrangeArrayDates();
+			BuildCustomReminderItems();
+			
+			
+		}
+		
+
+}

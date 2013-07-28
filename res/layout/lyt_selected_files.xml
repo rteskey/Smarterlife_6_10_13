@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              android:weightSum="100">
+
+    <TextView
+            android:id="@+id/selected_item"
+            android:layout_width="60dp"
+            android:paddingRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            />
+
+    <TextView
+            android:id="@+id/view"
+            android:layout_weight="20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:textColor="#ff2f6ca5"
+            android:textSize="19dp"
+            android:textStyle="bold"/>
+
+    <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="Delete"
+            android:textColor="#ff2f6ca5"
+            android:textSize="19dp"
+            android:textStyle="bold"/>
+
+</LinearLayout>

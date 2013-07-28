@@ -1,0 +1,342 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/ltyCalendaermain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_calendar_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578"
+            tools:context=".CalendarDashboard">
+
+        <LinearLayout
+                android:id="@+id/lytCalnedar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_eventstasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                <RelativeLayout
+                        android:id="@+id/lyt_events"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight=".5"
+                        android:background="#17a649">
+
+                    <Button
+                            android:id="@+id/btn_events"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:text="events"/>
+
+                    <Button
+                            android:id="@+id/btn_eventsadd"
+                            android:tag="btn_eventsadd"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_alignBottom="@+id/btn_events"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:background="@drawable/bk_calendar_btn_dash"
+                            android:gravity="right|center"
+                            android:paddingRight="10dp"
+                            android:text="+"/>
+
+                    <ImageView
+                            android:id="@+id/img_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignLeft="@+id/btn_events"
+                            android:layout_alignRight="@+id/btn_events"
+                            android:layout_alignTop="@+id/btn_eventsadd"
+                            android:layout_margin="2dp"
+                            android:background="#fff"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/lyt_tasks_lists"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight=".5"
+                        android:background="#d9631e">
+
+                    <Button
+                            android:id="@+id/btn_tasks"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:text="tasks"/>
+
+                    <Button
+                            android:id="@+id/btn_tasksadd"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_alignBottom="@+id/btn_tasks"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="right|center"
+                            android:paddingRight="10dp"
+                            android:text="+"/>
+
+                    <ImageView
+                            android:id="@+id/img_task"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignLeft="@+id/btn_tasks"
+                            android:layout_alignRight="@+id/btn_tasks"
+                            android:layout_alignTop="@+id/btn_tasksadd"
+                            android:layout_margin="2dp"
+                            android:background="#fff"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                <RelativeLayout
+                        android:id="@+id/lyt_cal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight=".5"
+                        android:background="#5b9ed9">
+
+                    <Button
+                            android:id="@+id/btn_calendar"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="210dp"
+                            android:text="calendar"/>
+
+                    <Button
+                            android:id="@+id/btn_calendaryear"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:layout_alignBottom="@+id/btn_calendar"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:text="2013"/>
+
+                    <ImageView
+                            android:id="@+id/img_calendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignLeft="@+id/btn_calendar"
+                            android:layout_alignRight="@+id/btn_calendar"
+                            android:layout_alignTop="@+id/btn_calendaryear"
+                            android:layout_margin="2dp"
+                            android:background="#fff"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/lyt_dayweekmonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight=".5">
+
+                    <RelativeLayout
+                            android:id="@+id/lytdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#5b9ed9"
+                            android:orientation="horizontal">
+
+                        <Button
+                                android:id="@+id/btndate"
+                                style="@style/dash_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:text="settings"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lytday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lytdate"
+                            android:layout_marginTop="3dp"
+                            android:background="#5b9ed9"
+                            android:orientation="horizontal">
+
+                        <Button
+                                android:id="@+id/btndaylabel"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
+                                android:layout_weight="0.7"
+                                android:gravity="center"
+                                android:text="day"/>
+
+                        <ImageView
+                                android:id="@+id/imgdaysep"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:background="#fff"/>
+
+                        <Button
+                                android:id="@+id/btnday"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="0.3"
+                                android:gravity="center"
+                                android:text="91"
+                                android:tag="btnday"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lytweek"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/lytday"
+                            android:layout_marginTop="3dp"
+                            android:background="#5b9ed9"
+                            android:orientation="horizontal">
+
+                        <Button
+                                android:id="@+id/btnweeklabel"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
+                                android:layout_weight="0.7"
+                                android:gravity="center"
+                                android:text="week"/>
+
+                        <ImageView
+                                android:id="@+id/imgweeksep"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#fff"/>
+
+                        <Button
+                                android:id="@+id/btnweek"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="0.3"
+                                android:gravity="center"
+                                android:text="13"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lytmonth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lytweek"
+                            android:layout_marginTop="3dp"
+                            android:background="#5b9ed9"
+                            android:orientation="horizontal">
+
+                        <Button
+                                android:id="@+id/btndate"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
+                                android:layout_weight="0.7"
+                                android:gravity="center"
+                                android:text="month"/>
+
+                        <ImageView
+                                android:id="@+id/imgmonthsep"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#fff"/>
+
+                        <Button
+                                android:id="@+id/btnmonth"
+                                style="@style/dash_button"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="0.3"
+                                android:gravity="center"
+                                android:text="4"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_settingshelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                <RelativeLayout
+                        android:id="@+id/lyt_setttings"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight=".7"
+                        android:background="#eac602">
+
+                    <Button
+                            android:id="@+id/btn_settings"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="settings"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:id="@+id/lyt_help"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight=".3"
+                        android:background="#ff00"
+                        android:gravity="clip_horizontal">
+
+                    <Button
+                            android:id="@+id/btn_help"
+                            style="@style/dash_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="help"/>
+                    />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+
+</RelativeLayout>

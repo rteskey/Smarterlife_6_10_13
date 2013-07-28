@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_event__scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_privacy"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFD9302D"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_privacy"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="privacy:"
+                            android:src="@drawable/ic_privacy"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9151B"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_privacy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="privacy:"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="#FFD9151B"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_privacy_save"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="save privacy"
+                            android:src="@drawable/ic_action_save"/>
+
+                    <ImageView
+                            android:id="@+id/img_privacy_cancel"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="cancel privacy"
+                            android:src="@drawable/ic_cancelled"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/content_privacy"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                <LinearLayout
+                        android:id="@+id/lyt_calendar_public_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#FFFFFF">
+
+                    <CheckBox
+                            android:id="@+id/cb_calendar_public"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_weight="90"/>
+
+                    <LinearLayout
+                            android:id="@+id/lyt_calendar_public_desc"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="10"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/lbl_privacy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/cb_calendar_public"
+                                android:paddingLeft="20dp"
+                                android:text="Make calendar public"
+                                android:textColor="#FF000000"
+                                android:textSize="14dp"
+                                android:textStyle="bold"/>
+
+                        <TextView
+                                android:id="@+id/tv_public_calendar_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="20dp"
+                                android:paddingTop="0dp"
+                                android:text="The calendar will appear in Smarter Life public search results"
+                                android:textColor="#FF000000"
+                                android:textSize="14dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/lyt_share_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="10dp">
+
+                    <LinearLayout
+                            android:id="@+id/lyt_share_calendar_bottom_border"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/lyt_border_attachments_bottom"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                        <CheckBox
+                                android:id="@+id/cb_calendar_share"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="-17dp"
+                                android:layout_weight="80"
+                                android:background="#FFFFFFFF"
+                                android:textColor="#FF000000"
+                                android:textSize="14dp"/>
+
+                        <TextView
+                                android:id="@+id/tv_share_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="20"
+                                android:background="#FFFFFFFF"
+                                android:text="Share only my available and unavailable schedule, no details."
+                                android:textColor="#FF000000"
+                                android:textSize="14dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                            android:id="@+id/tv_share_certin_people"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Share with certain people"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/tv_share_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Name or email address"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+
+                    <EditText
+                            android:id="@+id/et_share_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="3dp"
+                            android:hint="Enter name or email address"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+
+                    <TextView
+                            android:id="@+id/tv_share_settings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Sharing Settings"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+
+                    <Spinner
+                            android:id="@+id/sp_share_settings"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="3dp"
+                            android:entries="@array/share_settings_array"
+                            android:prompt="@string/share_settings_prompt"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/lyt_shared_with_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                    <TextView
+                            android:id="@+id/tv_shared_with"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="22"
+                            android:text="Shared with:"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/tv_shared_with_remove"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="78"
+                            android:text="Remove"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/lyt_shared_with"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                    <CheckBox
+                            android:id="@+id/cb_shared_with_person"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="45"
+                            android:background="#FFFFFFFF"
+                            android:paddingLeft="12dp"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"/>
+
+                    <TextView
+                            android:id="@+id/tv_shared_with_remove"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="10"
+                            android:paddingLeft="10dp"
+                            android:text="Timothy Smithson\n See all calendar details"
+                            android:textColor="#FF000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+
+                    <ImageView
+                            android:id="@+id/img_privacy_person_remove"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="45"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="remove"
+                            android:src="@drawable/ic_action_delete_blk"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.smarterlife.calendar.ResponsiveScrollView>
+
+</RelativeLayout>

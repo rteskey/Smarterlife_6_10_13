@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1d4578">
+
+    <com.smarterlife.calendar.ResponsiveScrollView
+            android:id="@+id/lyt_event_location_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d4578">
+
+        <LinearLayout
+                android:id="@+id/lyt_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#CC00468C"
+                android:gravity="center_vertical|fill"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/lyt_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/lyt_border"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:background="#FFEAC602"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_location"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="event location"
+                            android:src="@drawable/ic_location"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".8"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/lbl_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="location:"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="28dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:background="#FFD9A404"
+                        android:gravity="center">
+
+                    <ImageView
+                            android:id="@+id/img_location_save"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="save location"
+                            android:src="@drawable/ic_action_save"/>
+
+                    <ImageView
+                            android:id="@+id/img_location_cancel"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="location"
+                            android:src="@drawable/ic_cancelled"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lyt_location_form"
+                    android:background="#FFFFFFFF"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                <EditText
+                        android:id="@+id/et_location_name"
+                        android:hint="enter location's name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/et_location_address1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/et_location_address2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/et_location_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/et_location_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/et_location_zipcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.smarterlife.calendar.ResponsiveScrollView>
+</RelativeLayout>

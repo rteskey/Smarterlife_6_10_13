@@ -1,0 +1,7 @@
+<resources>
+
+    <color name="black_overlay">#66666666</color>
+    <color name="red_overlay">#66666666</color>
+    <color name="lightblue_month_toprow">#5b9ed8</color>
+    <color name="offwhite">#eeeeeeee</color>
+</resources>

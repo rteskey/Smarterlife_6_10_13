@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="#46484A"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="110dip"
+            android:textColor="#FFFFFF"
+            android:textSize="10pt"/>
+
+    <LinearLayout
+            android:id="@+id/datescrolllayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dip"
+                android:paddingLeft="30dp">
+
+            <TableRow android:padding="10dip">
+
+                <TextView
+                        android:id="@+id/result"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#FFFFFF"
+                        android:textSize="10pt"
+                        android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+            <androidwheel.WheelView
+                    android:id="@+id/p1"
+                    android:layout_width="125dp"
+                    android:layout_height="150dip"
+                    android:tag="month"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/p2"
+                    android:layout_width="50dip"
+                    android:layout_height="150dip"
+                    android:tag="days"/>
+
+            <androidwheel.WheelView
+                    android:id="@+id/p3"
+                    android:layout_width="75dip"
+                    android:layout_height="150dip"
+                    android:tag="year"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/r1"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="18sp"/>
+
+            <EditText
+                    android:id="@+id/r2"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="18sp"/>
+
+            <EditText
+                    android:id="@+id/r3"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

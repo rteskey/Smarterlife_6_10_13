@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/lyt"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="#ffcc00"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp">
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/vp_event_d"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="3dp"
+            android:background="#ffdddd">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
