@@ -269,7 +269,11 @@ public class AddEvent {
 
     private Button btn_start_file_picker;
 
+    //Declare event variables
     private EditText et_event_title;
+    
+    
+    
     public AddEvent(Context context, Activity activity) {
         eContext = context;
         ctx = eContext;
